@@ -1,0 +1,20 @@
+<div class="container">
+
+<body>
+
+    <nav>
+        <p><%=link_to "Home", root_path, class:"Home" %></p>
+        <p><%=link_to "New Post", new_blog_path, class:"NewPost" %></p>
+    </nav>
+    <h3>Blogs</h3>
+    <% @blogs.each do |blog| %>
+    <div class="posts">
+        <p><%= link_to blog_path(id: blog.id), class:"Title" do %><%= blog.title %><% end %>
+        </p>
+        <p class="subtitle"><%= blog.subtitle %></p>
+        <p class="author"> -
+            <%= blog.author %></p>
+        <% end %>
+    </div>
+</body>
+</div>
